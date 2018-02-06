@@ -25,9 +25,9 @@ const myTreeData = [
                     "type": "APPLIANCE",
                     "path": "C1.A1",
                     "parent": "C1",
-                    "serial_number": "FNM00174900380",
-                    "appliance_type": "BARE_METAL",
-                    "deployment_type": "WARNADO"
+                    "serial_number": "DD12jdj339393",
+                    "appliance_type": "SuperDuper",
+                    "deployment_type": "EagleSalad"
                 },
             },
             {
@@ -37,7 +37,7 @@ const myTreeData = [
                     "type": "NODE",
                     "path": "C1.A1.N1",
                     "parent": "A1",
-                    "serial_number": "FCNSP174700063",
+                    "serial_number": "DDDDP174700063",
                     "slot": 0
                 }
             },
