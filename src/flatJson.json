@@ -1,0 +1,17 @@
+[
+  {
+    "parent": "CSVNode1",
+    "child": "CSVNode2",
+    "FlatJSON Attribute A": "22",
+    "FlatJSON Attribute B": "someValue"
+  },
+  {
+    "parent": "CSVNode1",
+    "child": "CSVNode3",
+    "FlatJSON Attribute A": "23",
+    "FlatJSON Attribute B": "someValue"
+  }
+]
+
+
+
