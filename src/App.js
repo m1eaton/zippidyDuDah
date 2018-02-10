@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Tree, treeUtil } from 'react-d3-tree';
-
+import './ConfigForm';
+import ConfigForm from "./ConfigForm";
 
 
 const myTreeData = [
@@ -86,8 +87,9 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Cyclone Configuration Data Viewer</h1>
                 </header>
+                <div height={20}/>
+                <ConfigForm/>
                 <div className="rd3t-tree-container">
                     <Tree data={myTreeData} orientation="vertical" nodeSvgShape={svgSquare} separation={sepDetails}/>
                 </div>
