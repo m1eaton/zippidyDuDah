@@ -18,6 +18,9 @@ class ConfigForm extends Component{
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUserName = this.handleUserName.bind(this);
+        this.handlePass = this.handlePass.bind(this);
+        this.handleIP = this.handleIP.bind(this);
     }
 
     render() {
@@ -26,11 +29,11 @@ class ConfigForm extends Component{
             <form onSubmit={this.handleSubmit}>
 
                 <label>UserName</label>
-                <input type="text" default={"Rob"}/>
+                <input type="text" default={"Rob"} onChange={this.handleUserName}/>
                 <label>Password</label>
-                <input type="password"/>
+                <input type="password" onChange={this.handlePass}/>
                 <label>IP</label>
-                <input type="text" default={"10.10.10.10"}/>
+                <input type="text" default={"10.10.10.10"} onChange={this.handleIP}/>
 
                 <input type="submit" value="Submit" />
             </form>
@@ -39,10 +42,10 @@ class ConfigForm extends Component{
 
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+        alert('UserName is: '+ this.data.handleUserName + " The IP address is: "+this.data.IP);
         event.preventDefault();
 
-        axios.get('/user?ID=12345')
+        axios.get('https://www.google.com/')
             .then(function (response) {
                 console.log(response);
             })
@@ -52,15 +55,19 @@ class ConfigForm extends Component{
     }
 
     handleUserName(event){
+        this.setState({userName: event.target.value});
+        debugger;
 
     }
 
     handlePass(event){
-
+        this.setState({password: event.target.value});
+        debugger;
     }
 
     handleIP(event){
-
+        this.setState({IP: event.target.value});
+        debugger;
     }
 
 }
