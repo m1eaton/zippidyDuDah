@@ -1,66 +1,10 @@
 import React, { Component } from 'react';
+import { Panel,PanelGroup } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 import { Tree, treeUtil } from 'react-d3-tree';
 import './ConfigForm';
 import ConfigForm from "./ConfigForm";
-
-
-const myTreeData = [
-    {
-        name: 'H0023',
-        attributes: {
-            "id": "C1",
-            "type": "CLUSTER",
-            "path": "C1",
-            "name": "H0023",
-            "master_appliance_id": "A1",
-            "nameDelimiter": "-"
-
-        },
-        children: [
-            {
-                name: 'H0023-appliance-1',
-                attributes: {
-                    "id": "A1",
-                    "type": "APPLIANCE",
-                    "path": "C1.A1",
-                    "parent": "C1",
-                    "serial_number": "DD12jdj339393",
-                    "appliance_type": "SuperDuper",
-                    "deployment_type": "EagleSalad"
-                },
-            },
-            {
-                name: 'H0023-node-1',
-                attributes:{
-                    "id": "N1",
-                    "type": "NODE",
-                    "path": "C1.A1.N1",
-                    "parent": "A1",
-                    "serial_number": "DDDDP174700063",
-                    "slot": 0
-                }
-            },
-        ],
-    },
-];
-const testFile = "flatJson.json";
-const testFile2 = "test.json";
-const testFile3 = "CSVData.csv";
-const csvSource = 'https://raw.githubusercontent.com/bkrem/react-d3-tree/master/docs/examples/data/csv-example.csv';
-
-const svgSquare = {
-    shape: 'rect',
-    shapeProps: {
-        width: 200,
-        height: 20,
-        stroke:"blue",
-        x: 0,
-        y: -20,
-    }
-}
-const sepDetails = {siblings:3,nonSiblings: 2};
 
 class App extends Component {
 
@@ -73,14 +17,7 @@ class App extends Component {
         };
     }
 
-    componentWillMount() {
-        debugger;
-        treeUtil.parseCSV(csvSource)
-            .then((data) => {
-            this.setState({ data })
-            })
-            .catch((err) => console.error(err));
-    }
+
 
     render() {
         return (
@@ -90,10 +27,6 @@ class App extends Component {
                 </header>
                 <div height={20}/>
                 <ConfigForm/>
-                <div className="rd3t-tree-container">
-                    <Tree data={myTreeData} orientation="vertical" nodeSvgShape={svgSquare} separation={sepDetails}/>
-                </div>
-
             </div>
 
         );
